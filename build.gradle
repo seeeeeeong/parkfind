@@ -17,6 +17,10 @@ configurations {
 	}
 }
 
+bootJar {
+	archiveFileName = 'app.jar'
+}
+
 repositories {
 	mavenCentral()
 }
@@ -24,17 +28,39 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'io.seruco.encoding:base62:0.1.3'
+	implementation 'org.springframework.retry:spring-retry'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+	implementation 'org.springframework:spring-aspects'
+	implementation 'io.hypersistence:hypersistence-utils-hibernate-60:3.2.0'
+
 	compileOnly 'org.projectlombok:lombok'
+
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
-	testImplementation 'org.testcontainers:junit-jupiter'
+	testImplementation "org.testcontainers:junit-jupiter:1.19.0"
 	testImplementation 'org.testcontainers:mariadb'
+	testImplementation('com.squareup.okhttp3:okhttp:4.10.0')
+	testImplementation('com.squareup.okhttp3:mockwebserver:4.10.0')
+
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+processTestResources {
+	boolean hasProperty = project.hasProperty("KAKAO_REST_API_KEY")
+	System.out.println("Set kakao rest api key: $hasProperty")
+	filesMatching('**/application.yml') {
+		expand(project.properties)
+	}
 }

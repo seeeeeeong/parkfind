@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  app-project-redis:
+  parkfind-redis:
     container_name: parkfind-redis
     build:
       dockerfile: Dockerfile
@@ -9,7 +9,7 @@ services:
     ports:
       - "6379:6379"
 
-  app-project-database:
+  parkfind-database:
     container_name: parkfind-database
     build:
       dockerfile: Dockerfile
@@ -23,3 +23,19 @@ services:
       - ./database/init:/docker-entrypoint-initdb.d
     ports:
       - "3306:3306"
+
+  parkfind:
+    container_name: parkfind
+    build: .
+    depends_on:
+      - parkfind-database
+      - parkfind-redis
+    image: seeeeeeong/parkfind
+    environment:
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE}
+      - KAKAO_REST_API_KEY=${KAKAO_REST_API_KEY}
+    ports:
+      - "80:8080"
+    restart: always
