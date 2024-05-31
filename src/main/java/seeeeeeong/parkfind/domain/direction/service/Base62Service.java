@@ -18,4 +18,5 @@ public class Base62Service {
         String resultDirectionId = new String(base62Instance.decode(encodedDirectionId.getBytes()));
         return Long.valueOf(resultDirectionId);
     }
+    
 }
