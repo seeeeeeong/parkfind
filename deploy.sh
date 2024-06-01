@@ -7,10 +7,10 @@ if [ -z "$IS_GREEN" ]; then # green이 실행 중이지 않다면
   echo "### BLUE => GREEN ###"
 
   echo "1. get green image"
-  docker-compose pull green # green 이미지를 내려받습니다.
+  docker-compose pull parkfind-green # green 이미지를 내려받습니다.
 
   echo "2. green container up"
-  docker-compose up -d green # green 컨테이너 실행
+  docker-compose up -d parkfind-green # green 컨테이너 실행
 
   # green 컨테이너 상태 확인
   while true; do
@@ -40,15 +40,15 @@ if [ -z "$IS_GREEN" ]; then # green이 실행 중이지 않다면
   sudo nginx -s reload
 
   echo "5. blue container down"
-  docker-compose stop blue
+  docker-compose stop parkfind-blue
 else
   echo "### GREEN => BLUE ###"
 
   echo "1. get blue image"
-  docker-compose pull blue
+  docker-compose pull parkfind-blue
 
   echo "2. blue container up"
-  docker-compose up -d blue
+  docker-compose up -d parkfind-blue
 
   # blue 컨테이너 상태 확인
   while true; do
@@ -79,5 +79,5 @@ else
   sudo nginx -s reload
 
   echo "5. green container down"
-  docker-compose stop green
+  docker-compose stop parkfind-green
 fi

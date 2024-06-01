@@ -30,7 +30,7 @@ services:
     depends_on:
       - parkfind-database
       - parkfind-redis
-    image: seeeeeeong/parkfind
+    image: seeeeeeong/parkfind-blue
     environment:
       - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
       - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
@@ -46,7 +46,7 @@ services:
     depends_on:
       - parkfind-database
       - parkfind-redis
-    image: seeeeeeong/parkfind
+    image: seeeeeeong/parkfind-green
     environment:
       - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
       - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
