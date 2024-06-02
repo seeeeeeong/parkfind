@@ -24,13 +24,13 @@ services:
     ports:
       - "3306:3306"
 
-  green:
+  parkfind-app:
     container_name: parkfind-green
     build: .
     depends_on:
       - parkfind-database
       - parkfind-redis
-    image: seeeeeeong/parkfind-green
+    image: seeeeeeong/parkfind:green
     environment:
       - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USERNAME}
       - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
