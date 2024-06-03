@@ -79,4 +79,4 @@ spring:
 park:
   recommendation:
     base:
-      url: http://3.37.167.45/dir/
+      url: http://3.34.6.245/dir/
