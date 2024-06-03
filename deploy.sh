@@ -34,7 +34,7 @@ if [ -z "$IS_BLUE" ];then
   docker-compose up -d park-blue
 
   echo "3. health check"
-  if ! check_service "http://3.37.167.45:8080"; then
+  if ! check_service "http://3.34.6.245:8080"; then
     echo "Blue health check 가 실패했습니다."
     exit 1
   fi
@@ -57,7 +57,7 @@ else
   docker-compose up -d park-green
 
   echo "3. health check"
-  if ! check_service "http://3.37.167.45:8082"; then
+  if ! check_service "http://3.34.6.245:8081"; then
       echo "Green health check 가 실패했습니다."
       exit 1
     fi
