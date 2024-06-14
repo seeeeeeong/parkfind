@@ -6,10 +6,42 @@
 
     <!-- 부트스트랩 css 추가 -->
     <link rel="stylesheet" href="/css/lib/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #333; /* 살짝 연한 검정색 */
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .h2-title {
+            text-align: center;
+            margin: 20px 0;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #444; /* 어두운 테이블 배경색 */
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #555; /* 테두리 색상 */
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #555; /* 헤더 배경색 */
+        }
+        tr:hover {
+            background-color: #666; /* 호버 시 배경색 */
+        }
+        a {
+            color: #1e90ff; /* 링크 색상 */
+        }
+    </style>
 </head>
 <body>
 <div>
-    <h2 class="h2-title">Park Recommendation Results</h2>
+    <h2 class="h2-title">근처 주차장</h2>
 </div>
 
 <table class="table table-hover">
@@ -28,6 +60,7 @@
         <td><a th:href="${park.roadViewUrl}" th:text="${park.roadViewUrl}"></a></td>
     </tr>
 </table>
+
 <script src="/js/lib/jquery.min.js"></script>
 <script src="/js/lib/bootstrap.min.js"></script>
 

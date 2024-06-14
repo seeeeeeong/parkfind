@@ -2,30 +2,58 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Park Recommendation System</title>
+    <title>parkfind</title>
 
     <!-- 부트스트랩 css 추가 -->
     <link rel="stylesheet" th:href="@{/css/lib/bootstrap.min.css}">
+    <style>
+        body {
+            background-color: #333; /* 살짝 연한 검정색 */
+            color: white;
+            margin: 0; /* 기본 마진 제거 */
+            padding: 0; /* 기본 패딩 제거 */
+        }
+        .form-control {
+            background-color: #555; /* 회색 배경 */
+            color: white;
+            border-color: white;
+        }
+        .form-control::placeholder {
+            color: #bbb; /* 가독성 좋은 회색 */
+        }
+        .btn-primary {
+            background-color: #555; /* 회색 배경 */
+            color: white;
+            border-color: white;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px; /* 컨테이너 높이 설정 */
+            margin-top: 20px; /* 최상단에서 약간의 여백 */
+        }
+        .form-inline {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2 {
+            margin: 0 10px 0 0;
+            font-size: 1.2rem; /* 글자 크기 조정 */
+            white-space: nowrap; /* 글자가 한 줄에 나오도록 설정 */
+        }
+    </style>
 </head>
 <body>
-<div>
-    <div class="container">
-        <div>
-            <h2>Park Recommendation</h2>
-        </div>
-        <div class="body">
-            <form th:action="@{/search}" th:object="${inputDto}" method="post">
-                <div>
-                    <label for="address_kakao">주소를 입력하시면 주소 기준으로 가까운 주차장의 위치 최대 3곳 추천드립니다.</label>
-                    <input type="text" class="form-control" id="address_kakao" name="address"
-                           placeholder="주소(지번 또는 도로명)를 입력하세요. ex) 서울특별시 성북구 종암로 10길" readonly>
-                </div>
-                <div>
-                    <button type="submit" class="btn btn-primary" id="btn-save">Search</button>
-                </div>
-            </form>
-        </div>
-    </div>
+<div class="container">
+    <form class="form-inline" th:action="@{/search}" th:object="${inputDto}" method="post">
+        <h2>주차장 찾기</h2>
+        <label for="address_kakao"></label>
+        <input type="text" class="form-control" id="address_kakao" name="address"
+               placeholder="내 위치 입력" readonly>
+        <button type="submit" class="btn btn-primary" id="btn-save">Search</button>
+    </form>
 </div>
 
 <!-- Kakao 우편번호 서비스 -->
