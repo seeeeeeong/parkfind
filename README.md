@@ -4,12 +4,12 @@
 </div>
 <br>
 
+https://www.parksfind.com/
 
 ## 프로젝트 소개
 
 본 프로젝트는 서울지역 주차장정보표준데이터를 이용하여 입력된 주소 근처의 주차장 정보를 제공하는
 서비스입니다. 
-
 
 ## 기술 스택
 
@@ -48,7 +48,6 @@ Blue/Green 배포 흐름
 ![서비스 세부 기능](https://github.com/seeeeeeong/parkfind/assets/136677284/6b26a812-ad54-475f-8095-047aad1fc596)
 
 
-
 ### 프로젝트 중점사항
 
 - Spock를 이용한 테스트 코드 작성
@@ -57,9 +56,11 @@ Blue/Green 배포 흐름
 - Spring retry를 이용한 재처리 구현
 - base62를 이용한 shorten url 개발
 - Jenkins를 사용하여 CI/CD 환경 구축
-- Docker를 이용하여 cd 구현
 - Nginx를 이용한 무중단 배포 구현
 
+### 프로젝트 위키
+
+[WIKI](/parkfind_wiki.md)
 
 
 
