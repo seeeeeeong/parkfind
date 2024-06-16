@@ -4,7 +4,7 @@
 </div>
 <br>
 
-https://www.parksfind.com/
+http://www.parksfind.com/
 
 ## 프로젝트 소개
 
