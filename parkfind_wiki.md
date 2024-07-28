@@ -21,7 +21,7 @@
 
 <hr>
 
-![image](https://github.com/seeeeeeong/doodle/assets/136677284/1c033196-e367-47bf-a289-aa584f86378a)
+![서버 아키텍처](https://github.com/user-attachments/assets/1814d914-fb8f-4ba7-b219-aa3eda3f1b17)
 
 ### CI
 
