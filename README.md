@@ -29,7 +29,8 @@ http://www.parksfind.com/
 
 ### 서버 아키텍처
 
-![서버 아키텍처](https://github.com/seeeeeeong/parkfind/assets/136677284/fe6f7b66-b4b3-47a5-81a9-1231f2027d30)
+![서버 아키텍처](https://github.com/user-attachments/assets/1814d914-fb8f-4ba7-b219-aa3eda3f1b17)
+
 
 ##### Jenkins, Nginx, SpringBoot(Blue), SpringBoot(Green) 이용
 
