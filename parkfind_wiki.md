@@ -1,26 +1,5 @@
 # 프로젝트 wiki
 
-### Spring retry를 통한 재처리
-
-- 서버와 서버간 api 호출 실패에 대한 재시도
-- 1번의 호출 실패로 비지니스 로직의 실패 처리 또는 fallback 처리는 재처리보다 큰 리소스 낭비가 될 수 있다.
-
-**@Retryable**
-
-![image](https://github.com/seeeeeeong/doodle/assets/136677284/8adde66a-dffa-4acf-9574-d2d00d6fe334)
-
-- RuntimeException시 Retry
-- maxAttempts = 2 : 재시도 횟수
-- @Backoff(delay = 2000) : 시도 실패시 다음 시도까지의 딜레이
-
-**@Recover**
-
-- @Retryable에서 정한 횟수만큼 시도 후에도 정상 동작하지 않을 경우
-
-![image](https://github.com/seeeeeeong/doodle/assets/136677284/5d9c47da-df56-43e9-bf86-2e2d7a62d845)
-
-<hr>
-
 ![서버 아키텍처](https://github.com/user-attachments/assets/1814d914-fb8f-4ba7-b219-aa3eda3f1b17)
 
 ### CI
